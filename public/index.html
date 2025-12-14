@@ -3,67 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Generator Trik Slot</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #0f172a;
-      color: #fff;
-      padding: 30px;
-    }
-    select, button {
-      padding: 10px;
-      font-size: 16px;
-      margin: 5px 0;
-    }
-    pre {
-      background: #020617;
-      padding: 15px;
-      white-space: pre-wrap;
-      border-radius: 8px;
-      margin-top: 15px;
-    }
-    button {
-      cursor: pointer;
-      background: #7c3aed;
-      border: none;
-      color: white;
-      border-radius: 6px;
-    }
-  </style>
 </head>
 <body>
+  <h1>🎰 Generator Trik Slot</h1>
 
-<h2>🎰 Generator Trik Slot</h2>
+  <select id="provider">
+    <option value="pgsoft">PG SOFT</option>
+  </select>
 
-<label>Pilih Provider:</label><br>
-<select id="provider">
-  <option value="playtech">PLAYTECH</option>
-  <option value="pragmatic">PRAGMATIC</option>
-  <option value="pgsoft">PG SOFT</option>
-</select><br>
+  <button onclick="generate()">Generate Trik</button>
 
-<button onclick="generate()">Generate Trik</button>
+  <pre id="output"></pre>
 
-<pre id="result">Hasil akan muncul di sini...</pre>
-
-<button onclick="copy()">Copy ke Clipboard</button>
-
-<script>
-function generate() {
-  const provider = document.getElementById("provider").value;
-  fetch(`/trik/${provider}`)
-    .then(res => res.text())
-    .then(text => {
-      document.getElementById("result").textContent = text;
-    });
-}
-
-function copy() {
-  const text = document.getElementById("result").textContent;
-  navigator.clipboard.writeText(text);
-  alert("Trik berhasil dicopy!");
-}
-</script>
-
+  <script>
+    async function generate() {
+      const provider = document.getElementById("provider").value;
+      const res = await fetch("/trik/" + provider);
+      const text = await res.text();
+      document.getElementById("output").innerText = text;
+    }
+  </script>
 </body>
 </html>
