@@ -1,0 +1,167 @@
+{
+  "PRAGMATIC_PLAY": {
+    "label": "PRAGMATIC PLAY",
+    "spinCounts": [10, 20, 30, 50, 70],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN CEPAT",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN CEPAT",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  },
+
+  "IDN_SLOT": {
+    "label": "IDN SLOT",
+    "spinCounts": [10, 25, 50],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN CEPAT",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN CEPAT",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  },
+
+  "G5_GAMING": {
+    "label": "5G GAMING",
+    "spinCounts": [10, 30, 50],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN CEPAT",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN CEPAT",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  },
+
+  "PG_SOFT": {
+    "label": "PG SOFT",
+    "spinCounts": [10, 30, 50],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  },
+
+  "HABANERO": {
+    "label": "HABANERO",
+    "spinCounts": [10, 20, 30, 50],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  },
+
+  "PLAYSTAR": {
+    "label": "PLAYSTAR",
+    "spinCounts": [20, 50],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  },
+
+  "MICRO_GAMING": {
+    "label": "MICRO GAMING",
+    "spinCounts": [10, 25, 50],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  },
+
+  "NOLIMIT": {
+    "label": "NOLIMIT",
+    "spinCounts": [10, 25, 50],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  },
+
+  "PLAYTECH": {
+    "label": "PLAYTECH",
+    "spinCounts": [10, 25, 50],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  },
+
+  "RED_TIGER": {
+    "label": "RED TIGER",
+    "spinCounts": [20, 50],
+    "spinTypes": {
+      "AUTO": [
+        "AUTO SPIN TURBO",
+        "AUTO SPIN BIASA"
+      ],
+      "MANUAL": [
+        "MANUAL SPIN TURBO",
+        "MANUAL SPIN BIASA"
+      ]
+    },
+    "games": []
+  }
+}
