@@ -1,37 +1,25 @@
 const express = require("express");
+const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
-// STATIC FILE
+// serve static file (index.html)
 app.use(express.static("public"));
 
-// HOME
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
-
-// 🔥 ROUTE YANG BENAR (PERHATIKAN TITIK DUA)
-app.get("/trik/:provider", (req, res) => {
-  const provider = req.params.provider.toLowerCase();
-
-  if (provider === "pgsoft") {
-    return res.send(`
-🌟🌟 TRIK GACOR PG SOFT 🌟🌟
-
-🎭 Manual Spin 20x
-🎭 Auto Spin 30x
-🎭 Turbo Spin 10x
-
-Salam JP Boskuuu 🚀
-`);
+// ===== API PROVIDERS =====
+app.get("/api/providers", (req, res) => {
+  try {
+    const filePath = path.join(__dirname, "data", "providers.json");
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const data = JSON.parse(raw);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: "Gagal membaca providers.json" });
   }
-
-  res.status(404).send("Provider belum tersedia");
 });
 
-// START
 app.listen(PORT, () => {
-  console.log("Server running on port", PORT);
+  console.log("🚀 Server running on port", PORT);
 });
