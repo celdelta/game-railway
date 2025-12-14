@@ -8,9 +8,12 @@ app.use(express.static("public"));
 
 // API
 app.get("/trik/:provider", (req, res) => {
-  if (req.params.provider === "pgsoft") {
-    return res.send("TRIK PG SOFT AKTIF 🚀");
+  const provider = req.params.provider.toLowerCase();
+
+  if (provider === "pgsoft") {
+    return res.send("🔥 TRIK PG SOFT AKTIF 🚀");
   }
+
   res.send("Provider belum tersedia");
 });
 
