@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Generator Trik Slot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+      padding: 30px;
+    }
+    select, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      background: #7c3aed;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    pre {
+      background: #020617;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 <body>
+
   <h1>🎰 Generator Trik Slot</h1>
 
+  <label>Pilih Provider:</label><br>
   <select id="provider">
     <option value="pgsoft">PG SOFT</option>
-  </select>
+  </select><br>
 
   <button onclick="generate()">Generate Trik</button>
 
-  <pre id="output"></pre>
+  <pre id="output">Klik Generate Trik</pre>
 
   <script>
-    async function generate() {
+    function generate() {
       const provider = document.getElementById("provider").value;
-      const res = await fetch("/trik/" + provider);
-      const text = await res.text();
-      document.getElementById("output").innerText = text;
+
+      fetch("/trik/" + provider)
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("output").innerText = data;
+        })
+        .catch(err => {
+          document.getElementById("output").innerText = "Error!";
+        });
     }
   </script>
+
 </body>
 </html>
