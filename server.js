@@ -1,15 +1,24 @@
 const express = require("express");
-const app = express();
+const path = require("path");
 
-// WAJIB untuk Railway
+const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  res.send("🚀 Game Railway is running!");
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+app.get("/trik/playtech", (req, res) => {
+  res.send(`🌟🌟 TRIK GACOR PLAYTECH HARI INI 🌟🌟
+
+🌟 Jurassic Island II 🌟
+🎭Manual Spin Biasa 35x
+🎭Auto Spin Biasa 10x
+🎭Auto Spin Turbo 30x
+🎭Manual Spin Turbo 5x
+`);
 });
 
 app.listen(PORT, () => {
