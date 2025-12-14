@@ -2,37 +2,34 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-// STATIC FILE (HTML)
-app.use(express.static(path.join(__dirname, "public")));
+// STATIC FILE
+app.use(express.static("public"));
 
-// API GENERATE TRIK
-app.get("/trik/:provider", (req, res) => {
-  const provider = req.params.provider.toLowerCase();
-
-  if (provider === "pgsoft") {
-    return res.send(`
-🌟🌟 TRIK GACOR PG SOFT HARI INI 🌟🌟
-
-🎰 Game Random
-🎭 Manual Spin Biasa 15x
-🎭 Auto Spin Biasa 30x
-🎭 Auto Spin Turbo 20x
-🎭 Manual Spin Turbo 10x
-
-Salam JP Boskuuu 🥰
-    `);
-  }
-
-  res.send("❌ Provider belum tersedia");
-});
-
-// ROOT → LOAD HTML
+// HOME
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
+// API TRIK (INI YANG KAMU BUTUH)
+app.get("/trik/:provider", (req, res) => {
+  const provider = req.params.provider.toLowerCase();
+
+  if (provider === "pgsoft") {
+    return res.send(`🌟🌟 TRIK GACOR PG SOFT 🌟🌟
+
+🎭 Manual Spin 20x
+🎭 Auto Spin 30x
+🎭 Turbo Spin 10x
+
+Salam JP Boskuuu 🚀`);
+  }
+
+  res.status(404).send("Provider belum tersedia");
+});
+
+// START SERVER
 app.listen(PORT, () => {
-  console.log("🚀 Server running on port", PORT);
+  console.log("Server running on port", PORT);
 });
